@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading;
 using Jose;
 using Newtonsoft.Json;
-using Org.BouncyCastle.Asn1.Cms;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;

@@ -42,7 +42,7 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Mixin.Network.csproj">
+      <ProjectReference Include="..\Mixin.Network\Mixin.Network.csproj">
         <Project>{49dbb7ce-d125-4579-93da-5300372046c6}</Project>
         <Name>Mixin.Network</Name>
       </ProjectReference>
