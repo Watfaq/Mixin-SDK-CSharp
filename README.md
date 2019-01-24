@@ -1,5 +1,7 @@
 # Mixin-SDK-CSharp
 
+* Target Framework: .net4.7.2
+
 已经实现了 Websocket 和 Network 两部分的核心功能和 API，支持用户扫码登录。
 
 例子分别在 Example 目录中。
