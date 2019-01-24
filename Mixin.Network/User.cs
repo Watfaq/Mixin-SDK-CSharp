@@ -1,13 +1,24 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+#endregion
 
 namespace Mixin.Network
 {
     public partial class User
     {
+        private readonly string baseUrl = "https://api.mixin.one";
+
+        private readonly string clientId;
+        private readonly string pinCode;
+        private readonly string pinToken;
+        private readonly string privateKey;
+        private readonly string sessionId;
+
         public User(string clientId, string sessionId, string pinToken, string pinCode, string privateKey)
         {
             this.clientId = clientId;
@@ -17,18 +28,10 @@ namespace Mixin.Network
             this.privateKey = privateKey;
         }
 
-        private string clientId;
-        private string sessionId;
-        private string pinToken;
-        private string pinCode;
-        private string privateKey;
-        
-        private string baseUrl = "https://api.mixin.one";
-        
 
         public string VerifyPin(string pin)
         {
-            var encryptedPin = encryptPin(pin, (UInt64)DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
+            var encryptedPin = encryptPin(pin, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
             var body = JsonConvert.SerializeObject(new Dictionary<string, object>
             {
                 {"pin", encryptedPin}
@@ -160,10 +163,5 @@ namespace Mixin.Network
         {
             return sendGetRequest("/me");
         }
-
-
-
-
-        
     }
 }

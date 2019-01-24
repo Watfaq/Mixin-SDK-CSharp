@@ -1,7 +1,9 @@
-﻿
+﻿#region
 
 using System;
 using Mixin.Network;
+
+#endregion
 
 namespace Examples
 {

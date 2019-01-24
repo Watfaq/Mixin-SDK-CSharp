@@ -1,3 +1,5 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,12 +15,13 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 
+#endregion
 
 namespace Mixin.Network
 {
-    public  partial class User
+    public partial class User
     {
-        private string signAuthToken(string method, string uri, string body="")
+        private string signAuthToken(string method, string uri, string body = "")
         {
             var iat = DateTimeOffset.UtcNow;
             var exp = iat + TimeSpan.FromDays(30);
@@ -40,7 +43,7 @@ namespace Mixin.Network
             using (var rsa = new RSACryptoServiceProvider())
             {
                 rsa.ImportParameters(rsaParams);
-                return Jose.JWT.Encode(claims, rsa, JwsAlgorithm.RS512);
+                return JWT.Encode(claims, rsa, JwsAlgorithm.RS512);
             }
         }
 
@@ -50,7 +53,8 @@ namespace Mixin.Network
             var pr = new PemReader(new StringReader(privateKey));
             var keys = (AsymmetricCipherKeyPair) pr.ReadObject();
 
-            var eng = new OaepEncoding(new RsaEngine(), new Sha256Digest(), new Sha256Digest(), Encoding.UTF8.GetBytes(sessionId));
+            var eng = new OaepEncoding(new RsaEngine(), new Sha256Digest(), new Sha256Digest(),
+                Encoding.UTF8.GetBytes(sessionId));
             eng.Init(false, keys.Private);
 
             var plainTextBytes = new List<byte>();
@@ -63,7 +67,7 @@ namespace Mixin.Network
 
             var keyBytes = plainTextBytes.ToArray();
 
-            
+
             var pinBytes = new List<byte>(Encoding.ASCII.GetBytes(pin));
             var timeBytes = BitConverter.GetBytes(DateTimeOffset.UtcNow.ToUnixTimeSeconds());
             pinBytes.AddRange(timeBytes);
@@ -100,7 +104,7 @@ namespace Mixin.Network
 
         private string sha256(string method, string uri, string body)
         {
-            var bytes = Encoding.UTF8.GetBytes(method+uri+body);
+            var bytes = Encoding.UTF8.GetBytes(method + uri + body);
             var hasher = new SHA256Managed();
             var hashed = hasher.ComputeHash(bytes);
             var rv = string.Empty;

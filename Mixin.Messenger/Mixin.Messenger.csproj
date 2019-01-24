@@ -85,6 +85,7 @@
         <Reference Include="WindowsBase" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Message.cs" />
         <Compile Include="WebSocketApi.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
