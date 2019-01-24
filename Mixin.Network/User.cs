@@ -1,9 +1,7 @@
 #region
 
-using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 #endregion
 
@@ -11,6 +9,7 @@ namespace Mixin.Network
 {
     public partial class User
     {
+        private readonly string accessToken;
         private readonly string baseUrl = "https://api.mixin.one";
 
         private readonly string clientId;
@@ -19,149 +18,83 @@ namespace Mixin.Network
         private readonly string privateKey;
         private readonly string sessionId;
 
-        public User(string clientId, string sessionId, string pinToken, string pinCode, string privateKey)
+        public User(string clientId = "", string sessionId = "", string pinToken = "", string pinCode = "",
+            string privateKey = "", string accessToken = "")
         {
             this.clientId = clientId;
             this.sessionId = sessionId;
             this.pinToken = pinToken;
             this.pinCode = pinCode;
             this.privateKey = privateKey;
+            this.accessToken = accessToken;
         }
 
-
-        public string VerifyPin(string pin)
+        public string GetMyAssets()
         {
-            var encryptedPin = encryptPin(pin, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-            var body = JsonConvert.SerializeObject(new Dictionary<string, object>
-            {
-                {"pin", encryptedPin}
-            });
-            return sendPostRequest("/pin/verify", body);
+            return sendGetRequest("/assets", accessToken);
         }
 
-        public string CreatePin(string oldPin, string newPin)
+        public string UpdateMyPreference(string receiveMessageSource = "EVERYBODY",
+            string acceptConversationSource = "EVERYBODY")
         {
-            var oldEncryptedPin = string.Empty;
-            if (oldPin.Length > 0)
+            return sendPostRequest("/me/preferences", JsonConvert.SerializeObject(new Dictionary<string, string>
             {
-                oldEncryptedPin = encryptPin(oldPin, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-            }
-
-            var newEncryptedPin = encryptPin(newPin, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-            var body = JsonConvert.SerializeObject(new Dictionary<string, object>
-            {
-                {"old_pin", oldEncryptedPin},
-                {"pin", newEncryptedPin}
-            });
-
-            return sendPostRequest("/pin/update", body);
+                {"receive_message_source", receiveMessageSource},
+                {"accept_conversation_source", acceptConversationSource}
+            }), accessToken);
         }
 
-        public string Deposit(string asset, string accountName = "", string accountTag = "")
+        public string UpdateMyProfile(string fullName, string avatarBase64 = "")
         {
-            var uri = "/assets/" + asset;
-            if (asset == Assets.EOS)
+            return sendPostRequest("/me", JsonConvert.SerializeObject(new Dictionary<string, string>
             {
-                var body = JsonConvert.SerializeObject(new Dictionary<string, object>
-                {
-                    {"account_name", accountName},
-                    {"account_tag", accountTag}
-                });
-                return sendPostRequest(uri, body);
-            }
-
-            return sendGetRequest(uri);
+                {"full_name", fullName},
+                {"avatar_base64", avatarBase64}
+            }), accessToken);
         }
 
-        public string CreateAddress(string asset, string address, string label, string accountName = "",
-            string accountTag = "")
+        public string GetUsersInfo(string userIds)
         {
-            var uri = "/addresses";
-            var pin = encryptPin(pinCode, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-            var body = new Dictionary<string, object>
-            {
-                {"asset_id", asset},
-                {"public_key", address},
-                {"label", label},
-                {"pin", pin}
-            };
-            if (asset == Assets.EOS)
-            {
-                body.Add("account_name", accountName);
-                body.Add("account_tag", accountTag);
-            }
-
-            return sendPostRequest(uri, JsonConvert.SerializeObject(body));
+            return sendPostRequest("/users/fetch", userIds, accessToken);
         }
 
-        public string Withdrawal(string asset, string address, string amount, string label = "")
+        public string GetUserInfo(string userId)
         {
-            var uri = "/withdrawals";
-            if (string.IsNullOrEmpty(label))
-            {
-                label = $"Mixin {asset} Address";
-            }
-
-            var data = CreateAddress(asset, address, label);
-            dynamic json = JObject.Parse(data);
-            var addressId = json.data.address_id;
-            var body = new Dictionary<string, object>
-            {
-                {"address_id", addressId},
-                {"amount", amount},
-                {"pin", encryptPin(pinCode, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds())},
-                {"trace_id", Guid.NewGuid().ToString()},
-                {"memo", "Created by Mixin SDK C#"}
-            };
-            return sendPostRequest(uri, JsonConvert.SerializeObject(body));
+            return sendGetRequest($"/users/{userId}", accessToken);
         }
 
-        public string ReadAsset(string asset)
+        public string SearchUser(string q)
         {
-            return sendGetRequest($"/assets/{asset}");
+            return sendGetRequest($"/search/{q}", accessToken);
         }
 
-        public string ReadAssets()
+        public string RotateUserQR()
         {
-            return sendGetRequest("/assets");
+            return sendGetRequest("/me/code", accessToken);
         }
 
-        public string VerifyPayment(string opponentId, string amount, string asset, string traceId)
+        public string GetMyFriends()
         {
-            var body = JsonConvert.SerializeObject(new Dictionary<string, object>
+            return sendGetRequest("/friends", accessToken);
+        }
+
+        public string CreateConversation(string category, string conversationId, string participants, string action,
+            string role, string userId)
+        {
+            return sendPostRequest("/conversations", JsonConvert.SerializeObject(new Dictionary<string, string>
             {
-                {"asset_id", asset},
-                {"opponent_id", opponentId},
-                {"amount", amount},
-                {"trace_id", traceId}
-            });
-            return sendPostRequest("/payments", body);
+                {"category", category},
+                {"conversation_id", conversationId},
+                {"participants", participants},
+                {"action", action},
+                {"role", role},
+                {"user_id", userId}
+            }), accessToken);
         }
 
-        public string Transfer(string opponentId, string amount, string asset, string memo, string traceId = "")
+        public string GetConversation(string conversationId)
         {
-            var pin = encryptPin(pinCode, (UInt64) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-            if (string.IsNullOrEmpty(traceId))
-            {
-                traceId = Guid.NewGuid().ToString();
-            }
-
-            var body = JsonConvert.SerializeObject(new Dictionary<string, object>
-            {
-                {"asset_id", asset},
-                {"opponent_id", opponentId},
-                {"amount", amount},
-                {"pin", pin},
-                {"trace_id", traceId},
-                {"memo", memo}
-            });
-
-            return sendPostRequest("/transfers", body);
-        }
-
-        public string ReadProfile()
-        {
-            return sendGetRequest("/me");
+            return sendGetRequest($"/conversations/{conversationId}");
         }
     }
 }

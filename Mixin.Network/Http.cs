@@ -9,9 +9,10 @@ namespace Mixin.Network
 {
     public partial class User
     {
-        private string sendGetRequest(string uri)
+        private string sendGetRequest(string uri, string token = "")
         {
-            var token = signAuthToken("GET", uri);
+            if (string.IsNullOrEmpty(token))
+                token = signAuthToken("GET", uri);
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
@@ -19,9 +20,10 @@ namespace Mixin.Network
             }
         }
 
-        private string sendPostRequest(string uri, string body)
+        private string sendPostRequest(string uri, string body, string token = "")
         {
-            var token = signAuthToken("POST", uri, body);
+            if (string.IsNullOrEmpty(token))
+                token = signAuthToken("POST", uri, body);
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
