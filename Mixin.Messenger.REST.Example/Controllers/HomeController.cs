@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Mixin.Network;
 using Newtonsoft.Json;
 
 namespace Mixin.Messenger.REST.Example.Controllers
@@ -40,7 +39,7 @@ namespace Mixin.Messenger.REST.Example.Controllers
                     new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"));
                 dynamic res = JsonConvert.DeserializeObject(await req.Content.ReadAsStringAsync());
                 string accessToken = res.data.access_token;
-                var mixin = new User(accessToken: accessToken);
+                var mixin = new UserClient(accessToken);
                 return mixin.GetMyFriends();
             }
         }

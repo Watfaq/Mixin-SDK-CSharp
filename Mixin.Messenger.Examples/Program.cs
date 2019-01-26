@@ -39,7 +39,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             var CNB_ASSET_ID = "965e5c6e-434c-3fa9-b780-c50f43cd955c";
 
 
-            var ws = new WebSocketApi(clientId, sessionId, privateKey)
+            var ws = new WebSocketClient(clientId, sessionId, privateKey)
             {
                 onCloseDelegate = (sender, eventArgs) => { Console.WriteLine("closed " + eventArgs.ToString()); },
                 onErrorDelegate = (sender, eventArgs) => { Console.WriteLine("Error " + eventArgs.ToString()); }

@@ -7,12 +7,18 @@ using System.Text;
 
 namespace Mixin.Network
 {
-    public partial class User
+    public partial class MixinClientTransport
     {
-        private string sendGetRequest(string uri, string token = "")
+        private readonly string baseUrl = "https://api.mixin.one";
+
+        public MixinClientTransport()
+        {
+        }
+
+        public string SendGetRequest(string uri, string token = "")
         {
             if (string.IsNullOrEmpty(token))
-                token = signAuthToken("GET", uri);
+                token = SignAuthToken("GET", uri);
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
@@ -20,10 +26,10 @@ namespace Mixin.Network
             }
         }
 
-        private string sendPostRequest(string uri, string body, string token = "")
+        public string SendPostRequest(string uri, string body, string token = "")
         {
             if (string.IsNullOrEmpty(token))
-                token = signAuthToken("POST", uri, body);
+                token = SignAuthToken("POST", uri, body);
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");

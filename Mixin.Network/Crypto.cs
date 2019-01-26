@@ -19,9 +19,23 @@ using Org.BouncyCastle.Security;
 
 namespace Mixin.Network
 {
-    public partial class User
+    public partial class MixinClientTransport
     {
-        private string signAuthToken(string method, string uri, string body = "")
+        private string clientId;
+        private string sessionId;
+        private string pinToken;
+        private string privateKey;
+
+        public MixinClientTransport(string clientId, string sessionId, string pinToken, string privateKey)
+        {
+            this.clientId = clientId;
+            this.sessionId = sessionId;
+            this.pinToken = pinToken;
+            this.privateKey = privateKey;
+        }
+
+
+        public string SignAuthToken(string method, string uri, string body = "")
         {
             var iat = DateTimeOffset.UtcNow;
             var exp = iat + TimeSpan.FromDays(30);
@@ -47,7 +61,7 @@ namespace Mixin.Network
             }
         }
 
-        private string encryptPin(string pin, UInt64 iterator)
+        public string EncryptPin(string pin, UInt64 iterator)
         {
             var pinTokenBytes = Convert.FromBase64String(pinToken);
             var pr = new PemReader(new StringReader(privateKey));

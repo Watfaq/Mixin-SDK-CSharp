@@ -34,10 +34,11 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
 2gmfqy4hCcbZAJL0vEROJ6XoUjQFQoUigmSRiKvWwpRk
 -----END RSA PRIVATE KEY-----";
 
-            var user = new User(clientId, sessionId, pinToken, pinCode, privateKey);
+            var user = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
             Console.WriteLine(user.ReadProfile());
             Console.WriteLine(user.VerifyPin("123456"));
             Console.WriteLine(user.ReadAssets());
+            Console.ReadKey();
         }
     }
 }
