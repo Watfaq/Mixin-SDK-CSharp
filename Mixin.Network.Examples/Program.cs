@@ -34,10 +34,15 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
 2gmfqy4hCcbZAJL0vEROJ6XoUjQFQoUigmSRiKvWwpRk
 -----END RSA PRIVATE KEY-----";
 
-            var user = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
-            Console.WriteLine(user.ReadProfile());
-            Console.WriteLine(user.VerifyPin("123456"));
-            Console.WriteLine(user.ReadAssets());
+            var client = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
+            Console.WriteLine(client.ReadProfile());
+            Console.WriteLine(client.VerifyPin("123456"));
+            Console.WriteLine(client.ReadAssets());
+
+            var toClientId = "ea02ebc3-9be3-4a35-985b-6587fd28f493";
+            var tracdId = Guid.NewGuid().ToString();
+            Console.WriteLine(client.Transfer(toClientId, "0.01", Assets.CNB, "Test Transfer", tracdId));
+            Console.WriteLine(client.GetTransfer(tracdId));
             Console.ReadKey();
         }
     }
