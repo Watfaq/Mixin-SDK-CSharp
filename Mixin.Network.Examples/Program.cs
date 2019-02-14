@@ -1,6 +1,7 @@
 ﻿#region
 
 using System;
+using System.Linq;
 using Mixin.Network;
 
 #endregion
@@ -35,13 +36,13 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
 -----END RSA PRIVATE KEY-----";
 
             var client = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
-            Console.WriteLine(client.VerifyPin("123456"));
-            Console.WriteLine(client.ReadAssets());
+            Console.WriteLine(client.VerifyPin(pinCode).FullName);
+            Console.WriteLine(client.ReadAssets().First().AssetId);
 
             var toClientId = "ea02ebc3-9be3-4a35-985b-6587fd28f493";
             var tracdId = Guid.NewGuid().ToString();
-            Console.WriteLine(client.Transfer(toClientId, "0.01", Assets.CNB, "Test Transfer", tracdId));
-            Console.WriteLine(client.GetTransfer(tracdId));
+            Console.WriteLine(client.Transfer(toClientId, "0.01", Assets.CNB, "Test Transfer", tracdId).TraceId);
+            Console.WriteLine(client.GetTransfer(tracdId).Amount);
             Console.ReadKey();
         }
     }
