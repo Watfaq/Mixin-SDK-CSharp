@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+=======
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+>>>>>>> Add return type for Network
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +15,10 @@
     <AssemblyName>Mixin.Network</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+<<<<<<< HEAD
+=======
+    <TargetFrameworkProfile />
+>>>>>>> Add return type for Network
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +41,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+<<<<<<< HEAD
+=======
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+>>>>>>> Add return type for Network
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -48,8 +62,21 @@
     <Compile Include="Assets.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Http.cs" />
+<<<<<<< HEAD
     <Compile Include="Network.cs" />
     <Compile Include="MixinClient.cs" />
+=======
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Asset.cs" />
+    <Compile Include="Models\Snapshot.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\Transfer.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\VerifyPayment.cs" />
+    <Compile Include="Models\WithDrawal.cs" />
+    <Compile Include="Network.cs" />
+    <Compile Include="User.cs" />
+>>>>>>> Add return type for Network
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

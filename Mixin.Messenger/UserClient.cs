@@ -35,6 +35,11 @@ namespace Mixin.Messenger
             }), accessToken);
         }
 
+        public string ReadProfile()
+        {
+            return sendGetRequest("/me", accessToken);
+        }
+
         public string UpdateMyProfile(string fullName, string avatarBase64 = "")
         {
             return transport.SendPostRequest("/me", JsonConvert.SerializeObject(new Dictionary<string, string>
