@@ -88,14 +88,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Message.cs" />
-    <Compile Include="WebSocketApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserClient.cs" />
+    <Compile Include="WebSocketClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mixin.Network\Mixin.Network.csproj">
+      <Project>{49dbb7ce-d125-4579-93da-5300372046c6}</Project>
+      <Name>Mixin.Network</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

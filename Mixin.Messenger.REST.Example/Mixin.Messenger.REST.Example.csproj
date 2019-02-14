@@ -139,9 +139,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mixin.Network\Mixin.Network.csproj">
-      <Project>{49dbb7ce-d125-4579-93da-5300372046c6}</Project>
-      <Name>Mixin.Network</Name>
+    <ProjectReference Include="..\Mixin.Messenger\Mixin.Messenger.csproj">
+      <Project>{37bec313-ec7e-40cb-9362-8c19b224b2a8}</Project>
+      <Name>Mixin.Messenger</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

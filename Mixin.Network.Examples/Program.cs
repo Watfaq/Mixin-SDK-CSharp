@@ -35,7 +35,6 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
 -----END RSA PRIVATE KEY-----";
 
             var client = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
-            Console.WriteLine(client.ReadProfile());
             Console.WriteLine(client.VerifyPin("123456"));
             Console.WriteLine(client.ReadAssets());
 

@@ -37,7 +37,7 @@ namespace Mixin.Messenger
 
         public string ReadProfile()
         {
-            return sendGetRequest("/me", accessToken);
+            return transport.SendGetRequest("/me", accessToken);
         }
 
         public string UpdateMyProfile(string fullName, string avatarBase64 = "")

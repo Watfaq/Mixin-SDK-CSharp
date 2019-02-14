@@ -47,7 +47,7 @@ namespace Mixin.Network
                 return JsonConvert.DeserializeObject<AssetModel>(transport.SendPostRequest(uri, body)).Data;
             }
 
-            return JsonConvert.DeserializeObject<AssetModel>(transport.SendPostRequest(uri)).Data;
+            return JsonConvert.DeserializeObject<AssetModel>(transport.SendGetRequest(uri)).Data;
         }
 
         public AddressData CreateAddress(string asset, string address, string label, string accountName = "",
@@ -101,17 +101,17 @@ namespace Mixin.Network
 
         public AddressData GetAddress(string addressId)
         {
-            return JsonConvert.DeserializeObject<AddressModel>(transport.SendPostRequest($"/addresses/{addressId}")).Data;
+            return JsonConvert.DeserializeObject<AddressModel>(transport.SendGetRequest($"/addresses/{addressId}")).Data;
         }
 
         public AssetData ReadAsset(string asset)
         {
-            return JsonConvert.DeserializeObject<AssetModel>(transport.SendPostRequest($"/assets/{asset}")).Data;
+            return JsonConvert.DeserializeObject<AssetModel>(transport.SendGetRequest($"/assets/{asset}")).Data;
         }
 
         public List<AssetData> ReadAssets()
         {
-            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendPostRequest("/assets")).Data;
+            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest("/assets")).Data;
         }
 
         public VerifyPamentData VerifyPayment(string opponentId, string amount, string asset, string traceId)
@@ -146,7 +146,7 @@ namespace Mixin.Network
 
         public TransferData GetTransfer(string traceId)
         {
-            return JsonConvert.DeserializeObject<TransferModel>(transport.SendPostRequest($"/transfers/trace/{traceId}")).Data;
+            return JsonConvert.DeserializeObject<TransferModel>(transport.SendGetRequest($"/transfers/trace/{traceId}")).Data;
         }
 
         public List<TransactionData> ExternalTransfer(string assetId, string publicKey, string accountTag, string accountName,
@@ -177,17 +177,17 @@ namespace Mixin.Network
 
         public List<AssetData> TopAssets()
         {
-            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendPostRequest("/network")).Data;
+            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest("/network")).Data;
         }
 
         public List<SnapshotData> Snapshots(string offset, string assetId, string order = "DESC", int limit = 100)
         {
-            return JsonConvert.DeserializeObject<SnapshotListModel>(transport.SendPostRequest("/network/snapshots")).Data;
+            return JsonConvert.DeserializeObject<SnapshotListModel>(transport.SendGetRequest("/network/snapshots")).Data;
         }
 
         public SnapshotData Snapshot(string snapshotId)
         {
-            return JsonConvert.DeserializeObject<SnapshotModel>(transport.SendPostRequest($"/network/snapshots/${snapshotId}")).Data;
+            return JsonConvert.DeserializeObject<SnapshotModel>(transport.SendGetRequest($"/network/snapshots/${snapshotId}")).Data;
         }
     }
 }
