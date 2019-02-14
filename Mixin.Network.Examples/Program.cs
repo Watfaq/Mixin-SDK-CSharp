@@ -43,6 +43,10 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             var tracdId = Guid.NewGuid().ToString();
             Console.WriteLine(client.Transfer(toClientId, "0.01", Assets.CNB, "Test Transfer", tracdId).TraceId);
             Console.WriteLine(client.GetTransfer(tracdId).Amount);
+
+            Console.WriteLine(client.GetWithdrawalAddress(Assets.BTC).Count());
+            Console.WriteLine(client.GetNetworkAsset(Assets.XIN).Name);
+            Console.WriteLine(client.SearchAssets("eos").FirstOrDefault().Name);
             Console.ReadKey();
         }
     }

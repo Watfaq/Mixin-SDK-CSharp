@@ -13,6 +13,12 @@
         public AddressData Data { get; set; }
     }
 
+    public partial class AddressListModel
+    {
+        [JsonProperty("data")]
+        public List<AddressData> Data { get; set; }
+    }
+
     public partial class AddressData
     {
         [JsonProperty("type")]

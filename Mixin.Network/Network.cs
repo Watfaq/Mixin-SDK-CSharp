@@ -104,6 +104,11 @@ namespace Mixin.Network
             return JsonConvert.DeserializeObject<AddressModel>(transport.SendGetRequest($"/addresses/{addressId}")).Data;
         }
 
+        public List<AddressData> GetWithdrawalAddress(string assetId)
+        {
+            return JsonConvert.DeserializeObject<AddressListModel>(transport.SendGetRequest($"/assets/{assetId}/addresses")).Data;
+        }
+
         public AssetData ReadAsset(string asset)
         {
             return JsonConvert.DeserializeObject<AssetModel>(transport.SendGetRequest($"/assets/{asset}")).Data;
@@ -166,18 +171,15 @@ namespace Mixin.Network
             return JsonConvert.DeserializeObject<TransactionModel>(transport.SendPostRequest("/external/transactions", JsonConvert.SerializeObject(query))).Data;
         }
 
-        public UserData CreateUser(string sessionSecret, string fullName)
-        {
-            return JsonConvert.DeserializeObject<UserModel>(transport.SendPostRequest("/users", JsonConvert.SerializeObject(new Dictionary<string, string>
-            {
-                {"session_secret", sessionSecret},
-                {"full_name", fullName}
-            }))).Data;
-        }
 
         public List<AssetData> TopAssets()
         {
             return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest("/network/assets/top")).Data;
+        }
+
+        public AssetData GetNetworkAsset(string assetId)
+        {
+            return JsonConvert.DeserializeObject<AssetModel>(transport.SendGetRequest($"/network/assets/{assetId}")).Data;
         }
 
         public List<SnapshotData> Snapshots(string offset, string assetId, string order = "DESC", int limit = 100)
@@ -188,6 +190,20 @@ namespace Mixin.Network
         public SnapshotData Snapshot(string snapshotId)
         {
             return JsonConvert.DeserializeObject<SnapshotModel>(transport.SendGetRequest($"/network/snapshots/${snapshotId}")).Data;
+        }
+
+        public List<AssetData> SearchAssets(string assetName)
+        {
+            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest($"/network/assets/search/{assetName}")).Data;
+        }
+
+        public UserData CreateUser(string sessionSecret, string fullName)
+        {
+            return JsonConvert.DeserializeObject<UserModel>(transport.SendPostRequest("/users", JsonConvert.SerializeObject(new Dictionary<string, string>
+            {
+                {"session_secret", sessionSecret},
+                {"full_name", fullName}
+            }))).Data;
         }
     }
 }
