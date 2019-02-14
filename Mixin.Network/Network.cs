@@ -177,7 +177,7 @@ namespace Mixin.Network
 
         public List<AssetData> TopAssets()
         {
-            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest("/network")).Data;
+            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest("/network/assets/top")).Data;
         }
 
         public List<SnapshotData> Snapshots(string offset, string assetId, string order = "DESC", int limit = 100)
