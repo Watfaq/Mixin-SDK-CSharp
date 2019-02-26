@@ -1,0 +1,606 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Projects/Mixin-SDK/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Data.html",
+          "hash": "OpH+gsCDHdDpgvURtynYyg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Message.html",
+          "hash": "p3nx8rsDPUwUu7mrYVdvBQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.AttachmentData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.AttachmentData.html",
+          "hash": "pL+cG+UBwH6mBO4PH9RSlQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.AttachmentModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.AttachmentModel.html",
+          "hash": "iqlXEA0ja9F8VEsYg0+MGA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.ConversationData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.ConversationData.html",
+          "hash": "SxcV7SimN7AFf5IE2etKSQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.ConversationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.ConversationModel.html",
+          "hash": "EyieZuk5mJrjR35f/icZHg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.Participant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.Participant.html",
+          "hash": "0FTCgsOryGTjqvkJhmsrRw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.ProfileListModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.ProfileListModel.html",
+          "hash": "JLADrU+gP3WsEcWou2FZEg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.UserProfileData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.UserProfileData.html",
+          "hash": "Sq2n5WI5nN3VpHZev0Ti3w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.UserProfileModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.UserProfileModel.html",
+          "hash": "oP/Poo9gnOCMyB2/tLm7Pw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.html",
+          "hash": "hGpkDOfXthLNHxX5BrkBgA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.UserClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.UserClient.html",
+          "hash": "w6SAfnWyWuzfikTaWk+pfA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.OnCloseDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.WebSocketClient.OnCloseDelegate.html",
+          "hash": "hSsu4Y+HfhJEAtmu93Jq0w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.OnErrorDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.WebSocketClient.OnErrorDelegate.html",
+          "hash": "nQkFZRm1TM9FL6M8i8wyyQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.OnMessageDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.WebSocketClient.OnMessageDelegate.html",
+          "hash": "IhQk4eVtjjuM2W8i0uRXDQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.OnOpenDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.WebSocketClient.OnOpenDelegate.html",
+          "hash": "KMpw1/MFi6O7g9Zh+ELTpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.WebSocketClient.html",
+          "hash": "Wet7ADbhJNbiZpObnZri4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.html",
+          "hash": "NyKx7RBleyR4Dra0JuCIGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Assets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Assets.html",
+          "hash": "/9XaULqu4llixYa32xkPIQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.MixinClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.MixinClient.html",
+          "hash": "jWLq7r1VtYZbETogSakyVA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.MixinClientTransport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.MixinClientTransport.html",
+          "hash": "9Ej035kvHbM/yVooA/IdGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.AddressData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.AddressData.html",
+          "hash": "D+0MvmO2sX1yhp74fvXqQw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.AddressListModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.AddressListModel.html",
+          "hash": "A4beF7p3ETXSmd1KYJutyw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.AddressModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.AddressModel.html",
+          "hash": "Z2CGBmH2QN6/YctDHqdOxA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.AssetData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.AssetData.html",
+          "hash": "dS5scb9DJ28lZZwaaz95ag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.AssetListModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.AssetListModel.html",
+          "hash": "RjB9L75MrB6xEv0K++jD1Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.AssetModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.AssetModel.html",
+          "hash": "nQkWtVohuknwzNUiEEVxNg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.RecipientData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.RecipientData.html",
+          "hash": "NYE8yUloQvqbnAFkBxgbCg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.SnapshotData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.SnapshotData.html",
+          "hash": "i98VqRvv3+ci/twtdDPi2g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.SnapshotListModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.SnapshotListModel.html",
+          "hash": "C76Xubr+YMzOg8N2ZuwwOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.SnapshotModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.SnapshotModel.html",
+          "hash": "d0vpMDveunb6fiF3IhaClg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.TransactionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.TransactionData.html",
+          "hash": "CV2h87Mu1z/IEkGfUuYPmA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.TransactionModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.TransactionModel.html",
+          "hash": "OeaBpseRKeBuITjcx4lO9A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.TransferData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.TransferData.html",
+          "hash": "istAOYR37CQvNhtCC5OjaQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.TransferModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.TransferModel.html",
+          "hash": "PeSuagmcgOqxO6r/yk0l+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.UserData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.UserData.html",
+          "hash": "LE8vlAhyywQtTtR6LwqsTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.UserModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.UserModel.html",
+          "hash": "ZFzmpqPuZo1A/YbUiRIQfA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.VerifyPamentData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.VerifyPamentData.html",
+          "hash": "/RbMzoyi+JMqpOelqhw1iQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.VerifyPamentModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.VerifyPamentModel.html",
+          "hash": "5n+GqAg+3JHepNSAkTPzFQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.WithDrawalData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.WithDrawalData.html",
+          "hash": "MbzpAYvdaxS8nqks0biX0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.WithDrawalModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.WithDrawalModel.html",
+          "hash": "azJnKzakr/m85w07LTkXvQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.Models.html",
+          "hash": "aGeKO1LWxHwnoYqlTFQaqQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Network.html",
+          "hash": "sL9Jcxw6RAakwIHwbMiU+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "3LR+ZKT2Npe0GLsJjBt2iQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "I0Zjfl603zgU+jp7vFYLKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "nEhuaUmD36h8uUCPsAFreA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 43,
+          "skipped_file_count": 43
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
