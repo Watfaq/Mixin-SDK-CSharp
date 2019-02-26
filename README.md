@@ -1,6 +1,7 @@
 # Mixin-SDK-CSharp
 
 [![Build status](https://watfaq.visualstudio.com/Mixin%20SDK/_apis/build/status/Mixin%20SDK-CI)](https://watfaq.visualstudio.com/Mixin%20SDK/_build/latest?definitionId=6)
+[![Build status](https://ci.appveyor.com/api/projects/status/6x2s4ygresutksa9?svg=true)](https://ci.appveyor.com/project/ibigbug/mixin-sdk-csharp)
 
 ## Mixin.Network
 
