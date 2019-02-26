@@ -6,6 +6,9 @@ branches:
 
 skip_branch_with_pr: true
 
+only_commits:
+  message: /release/
+
 image: Visual Studio 2017
 
 matrix:
