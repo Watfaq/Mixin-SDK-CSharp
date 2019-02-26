@@ -44,7 +44,7 @@ build:
   verbosity: normal
 
 artifacts:
-  - path: '**/Mixin*.nupkg'
+  - path: 'bin\$(configuration)\*.nupkg'
 
 deploy:
   - provider: NuGet
