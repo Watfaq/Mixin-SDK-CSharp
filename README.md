@@ -5,11 +5,15 @@
 
 ## Mixin.Network
 
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Mixin.Network.svg?style=flat-square)
+
 ### [Installation](https://www.nuget.org/packages/Mixin.Network/)
 
 实现了 Network API。代码示例在 Mixin.Network.Examples 项目中
 
 ## Mixin.Messenger
+
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Mixin.Messenger.svg?style=flat-square)
 
 ### [Installation](https://www.nuget.org/packages/Mixin.Messenger/)
 
