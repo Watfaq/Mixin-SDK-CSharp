@@ -5,7 +5,7 @@
 
 ## Mixin.Network
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Mixin.Network.svg?style=flat-square)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Mixin.Network.svg?style=flat-square)](https://www.nuget.org/packages/Mixin.Network/)
 
 ### [Installation](https://www.nuget.org/packages/Mixin.Network/)
 
@@ -13,7 +13,7 @@
 
 ## Mixin.Messenger
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Mixin.Messenger.svg?style=flat-square)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Mixin.Messenger.svg?style=flat-square)](https://www.nuget.org/packages/Mixin.Messenger/)
 
 ### [Installation](https://www.nuget.org/packages/Mixin.Messenger/)
 
