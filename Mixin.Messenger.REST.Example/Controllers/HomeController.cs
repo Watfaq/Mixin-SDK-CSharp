@@ -11,8 +11,8 @@ namespace Mixin.Messenger.REST.Example.Controllers
     [Route("[controller]")]
     public class HomeController : Controller
     {
-        private string clientId = "4f11c777-3d31-468b-a099-5577438112ef";
-        private string clientSecret = "9316a61a51f27b6be744c39d348490b1f5cd56ab8ab9b939b3c4f806d296dbd7";
+        private readonly string clientId = "4f11c777-3d31-468b-a099-5577438112ef";
+        private readonly string clientSecret = "9316a61a51f27b6be744c39d348490b1f5cd56ab8ab9b939b3c4f806d296dbd7";
 
         public ActionResult Index()
         {
@@ -40,7 +40,7 @@ namespace Mixin.Messenger.REST.Example.Controllers
                 dynamic res = JsonConvert.DeserializeObject(await req.Content.ReadAsStringAsync());
                 string accessToken = res.data.access_token;
                 var mixin = new UserClient(accessToken);
-                return mixin.GetMyFriends();
+                return mixin.GetMyFriends().ToString();
             }
         }
     }

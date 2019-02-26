@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Mixin.Messenger.Models;
 using Mixin.Network;
 using Newtonsoft.Json;
 
@@ -11,86 +7,104 @@ namespace Mixin.Messenger
 {
     public class UserClient
     {
-        private string accessToken;
-        private MixinClientTransport transport;
+        private readonly string accessToken;
+        private readonly MixinClientTransport transport;
 
         public UserClient(string accessToken)
         {
             this.accessToken = accessToken;
             transport = new MixinClientTransport();
-
         }
-        public string GetMyAssets()
+
+        public UserProfileData ReadProfile()
         {
-            return transport.SendGetRequest("/assets", accessToken);
+            return JsonConvert.DeserializeObject<UserProfileModel>(transport.SendGetRequest("/me", accessToken)).Data;
         }
 
-        public string UpdateMyPreference(string receiveMessageSource = "EVERYBODY",
+        public UserProfileData UpdateMyPreference(string receiveMessageSource = "EVERYBODY",
             string acceptConversationSource = "EVERYBODY")
         {
-            return transport.SendPostRequest("/me/preferences", JsonConvert.SerializeObject(new Dictionary<string, string>
-            {
-                {"receive_message_source", receiveMessageSource},
-                {"accept_conversation_source", acceptConversationSource}
-            }), accessToken);
+            var resp = transport.SendPostRequest("/me/preferences", JsonConvert.SerializeObject(
+                new Dictionary<string, string>
+                {
+                    {"receive_message_source", receiveMessageSource},
+                    {"accept_conversation_source", acceptConversationSource}
+                }), accessToken);
+            return JsonConvert.DeserializeObject<UserProfileModel>(resp).Data;
         }
 
-        public string ReadProfile()
+        public UserProfileData UpdateMyProfile(string fullName, string avatarBase64 = "")
         {
-            return transport.SendGetRequest("/me", accessToken);
-        }
-
-        public string UpdateMyProfile(string fullName, string avatarBase64 = "")
-        {
-            return transport.SendPostRequest("/me", JsonConvert.SerializeObject(new Dictionary<string, string>
+            var resp = transport.SendPostRequest("/me", JsonConvert.SerializeObject(new Dictionary<string, string>
             {
                 {"full_name", fullName},
                 {"avatar_base64", avatarBase64}
             }), accessToken);
+            return JsonConvert.DeserializeObject<UserProfileModel>(resp).Data;
         }
 
-        public string GetUsersInfo(string userIds)
+        public List<UserProfileData> GetUsersInfo(string userIds)
         {
-            return transport.SendPostRequest("/users/fetch", userIds, accessToken);
+            return JsonConvert
+                .DeserializeObject<ProfileListModel>(transport.SendPostRequest("/users/fetch", userIds, accessToken))
+                .Data;
         }
 
-        public string GetUserInfo(string userId)
+        public UserProfileData GetUserInfo(string userId)
         {
-            return transport.SendPostRequest($"/users/{userId}", accessToken);
+            return JsonConvert
+                .DeserializeObject<UserProfileModel>(transport.SendPostRequest($"/users/{userId}", "", accessToken))
+                .Data;
         }
 
-        public string SearchUser(string q)
+        public UserProfileData SearchUser(string q)
         {
-            return transport.SendPostRequest($"/search/{q}", accessToken);
+            return JsonConvert
+                .DeserializeObject<UserProfileModel>(transport.SendPostRequest($"/search/{q}", "", accessToken)).Data;
         }
 
-        public string RotateUserQR()
+        public UserProfileData RotateUserQR()
         {
-            return transport.SendPostRequest("/me/code", accessToken);
+            return JsonConvert
+                .DeserializeObject<UserProfileModel>(transport.SendPostRequest("/me/code", "", accessToken)).Data;
         }
 
-        public string GetMyFriends()
+        public List<UserProfileData> GetMyFriends()
         {
-            return transport.SendPostRequest("/friends", accessToken);
+            return JsonConvert
+                .DeserializeObject<ProfileListModel>(transport.SendPostRequest("/friends", "", accessToken)).Data;
         }
 
-        public string CreateConversation(string category, string conversationId, string participants, string action,
+        public AttachmentData CreateAttachment()
+        {
+            return JsonConvert
+                .DeserializeObject<AttachmentModel>(transport.SendPostRequest("/attachments", "", accessToken))
+                .AttachmentData;
+        }
+
+        public ConversationData CreateConversation(string category, string conversationId, string participants,
+            string action,
             string role, string userId)
         {
-            return transport.SendPostRequest("/conversations", JsonConvert.SerializeObject(new Dictionary<string, string>
-            {
-                {"category", category},
-                {"conversation_id", conversationId},
-                {"participants", participants},
-                {"action", action},
-                {"role", role},
-                {"user_id", userId}
-            }), accessToken);
+            var resp = transport.SendPostRequest("/conversations", JsonConvert.SerializeObject(
+                new Dictionary<string, string>
+                {
+                    {"category", category},
+                    {"conversation_id", conversationId},
+                    {"participants", participants},
+                    {"action", action},
+                    {"role", role},
+                    {"user_id", userId}
+                }), accessToken);
+
+            return JsonConvert.DeserializeObject<ConversationModel>(resp).Data;
         }
 
-        public string GetConversation(string conversationId)
+        public ConversationData GetConversation(string conversationId)
         {
-            return transport.SendGetRequest($"/conversations/{conversationId}");
+            return JsonConvert
+                .DeserializeObject<ConversationModel>(transport.SendGetRequest($"/conversations/{conversationId}",
+                    accessToken)).Data;
         }
     }
 }
