@@ -8,23 +8,24 @@ namespace Mixin.Messenger
     public class UserClient
     {
         private readonly string accessToken;
-        private readonly MixinClientTransport transport;
+        private readonly MixinClientTransport clientTransport;
 
         public UserClient(string accessToken)
         {
             this.accessToken = accessToken;
-            transport = new MixinClientTransport();
+            clientTransport = new MixinClientTransport();
         }
 
         public UserProfileData ReadProfile()
         {
-            return JsonConvert.DeserializeObject<UserProfileModel>(transport.SendGetRequest("/me", accessToken)).Data;
+            return JsonConvert.DeserializeObject<UserProfileModel>(clientTransport.SendGetRequest("/me", accessToken))
+                .Data;
         }
 
         public UserProfileData UpdateMyPreference(string receiveMessageSource = "EVERYBODY",
             string acceptConversationSource = "EVERYBODY")
         {
-            var resp = transport.SendPostRequest("/me/preferences", JsonConvert.SerializeObject(
+            var resp = clientTransport.SendPostRequest("/me/preferences", JsonConvert.SerializeObject(
                 new Dictionary<string, string>
                 {
                     {"receive_message_source", receiveMessageSource},
@@ -35,7 +36,7 @@ namespace Mixin.Messenger
 
         public UserProfileData UpdateMyProfile(string fullName, string avatarBase64 = "")
         {
-            var resp = transport.SendPostRequest("/me", JsonConvert.SerializeObject(new Dictionary<string, string>
+            var resp = clientTransport.SendPostRequest("/me", JsonConvert.SerializeObject(new Dictionary<string, string>
             {
                 {"full_name", fullName},
                 {"avatar_base64", avatarBase64}
@@ -46,39 +47,42 @@ namespace Mixin.Messenger
         public List<UserProfileData> GetUsersInfo(string userIds)
         {
             return JsonConvert
-                .DeserializeObject<ProfileListModel>(transport.SendPostRequest("/users/fetch", userIds, accessToken))
+                .DeserializeObject<ProfileListModel>(clientTransport.SendPostRequest("/users/fetch", userIds,
+                    accessToken))
                 .Data;
         }
 
         public UserProfileData GetUserInfo(string userId)
         {
             return JsonConvert
-                .DeserializeObject<UserProfileModel>(transport.SendPostRequest($"/users/{userId}", "", accessToken))
+                .DeserializeObject<UserProfileModel>(clientTransport.SendPostRequest($"/users/{userId}", "",
+                    accessToken))
                 .Data;
         }
 
         public UserProfileData SearchUser(string q)
         {
             return JsonConvert
-                .DeserializeObject<UserProfileModel>(transport.SendPostRequest($"/search/{q}", "", accessToken)).Data;
+                .DeserializeObject<UserProfileModel>(clientTransport.SendPostRequest($"/search/{q}", "", accessToken))
+                .Data;
         }
 
         public UserProfileData RotateUserQR()
         {
             return JsonConvert
-                .DeserializeObject<UserProfileModel>(transport.SendPostRequest("/me/code", "", accessToken)).Data;
+                .DeserializeObject<UserProfileModel>(clientTransport.SendPostRequest("/me/code", "", accessToken)).Data;
         }
 
         public List<UserProfileData> GetMyFriends()
         {
             return JsonConvert
-                .DeserializeObject<ProfileListModel>(transport.SendPostRequest("/friends", "", accessToken)).Data;
+                .DeserializeObject<ProfileListModel>(clientTransport.SendPostRequest("/friends", "", accessToken)).Data;
         }
 
         public AttachmentData CreateAttachment()
         {
             return JsonConvert
-                .DeserializeObject<AttachmentModel>(transport.SendPostRequest("/attachments", "", accessToken))
+                .DeserializeObject<AttachmentModel>(clientTransport.SendPostRequest("/attachments", "", accessToken))
                 .AttachmentData;
         }
 
@@ -86,7 +90,7 @@ namespace Mixin.Messenger
             string action,
             string role, string userId)
         {
-            var resp = transport.SendPostRequest("/conversations", JsonConvert.SerializeObject(
+            var resp = clientTransport.SendPostRequest("/conversations", JsonConvert.SerializeObject(
                 new Dictionary<string, string>
                 {
                     {"category", category},
@@ -103,7 +107,7 @@ namespace Mixin.Messenger
         public ConversationData GetConversation(string conversationId)
         {
             return JsonConvert
-                .DeserializeObject<ConversationModel>(transport.SendGetRequest($"/conversations/{conversationId}",
+                .DeserializeObject<ConversationModel>(clientTransport.SendGetRequest($"/conversations/{conversationId}",
                     accessToken)).Data;
         }
     }
