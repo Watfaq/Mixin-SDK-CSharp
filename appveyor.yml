@@ -46,6 +46,10 @@ build:
 
   verbosity: normal
 
+test:
+  assemblies:
+    - Mixin.Test.dll
+
 artifacts:
   - path: 'bin\$(configuration)\*.nupkg'
 
