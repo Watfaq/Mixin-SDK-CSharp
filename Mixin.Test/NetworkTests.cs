@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
 using Mixin.Network;
-using NUnit.Framework;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Mixin.Test
 {
-    [TestFixture]
+    [TestClass]
     public class NetworkTests
     {
         private readonly MixinClient mixinClient;
@@ -37,7 +36,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             mixinClient = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
         }
 
-        [Test]
+        [TestMethod]
         public void TestCreatePin()
         {
             var testPin = "123456";
@@ -47,24 +46,24 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             Assert.AreEqual(fullName, changeBack.FullName);
         }
 
-        [Test]
+        [TestMethod]
         public void TestSearchAsserts()
         {
             var assets = mixinClient.SearchAssets("eos");
-            Assert.True(assets.Count > 0);
-            Assert.True(assets.First().Symbol.Equals("EOS"));
+            Assert.IsTrue(assets.Count > 0);
+            Assert.IsTrue(assets.First().Symbol.Equals("EOS"));
         }
 
-        [Test]
+        [TestMethod]
         public void TestTopAssets()
         {
             var assets = mixinClient.TopAssets();
-            Assert.True(assets.Count > 0);
+            Assert.IsTrue(assets.Count > 0);
 
-            Assert.NotNull(assets.First().Name);
+            Assert.IsNotNull(assets.First().Name);
         }
 
-        [Test]
+        [TestMethod]
         public void TestTransfer()
         {
             var toClientId = "ea02ebc3-9be3-4a35-985b-6587fd28f493";
@@ -77,7 +76,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             Assert.AreEqual("Test Transfer", transfer.Memo);
         }
 
-        [Test]
+        [TestMethod]
         public void TestVerifyPin()
         {
             var result = mixinClient.VerifyPin("491169");
