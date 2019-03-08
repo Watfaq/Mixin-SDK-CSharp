@@ -39,7 +39,7 @@ test:
     - Mixin.Tests.dll
 
 artifacts:
-  - path: 'bin\**\$(configuration)\*.nupkg'
+  - path: 'src\**\bin\$(configuration)\*.nupkg'
 
 deploy:
   - provider: NuGet
