@@ -1,11 +1,7 @@
-#region
-
-using System;
+﻿using System;
 using Newtonsoft.Json;
 
-#endregion
-
-namespace Mixin.Messenger
+namespace Mixin.Messenger.Models
 {
     public class Message
     {

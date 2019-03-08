@@ -6,9 +6,6 @@ branches:
 
 skip_branch_with_pr: true
 
-only_commits:
-  message: /release/
-
 image: Visual Studio 2017
 
 matrix:
@@ -16,15 +13,7 @@ matrix:
 
 # build cache to preserve files/folders between builds
 cache:
-  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
   - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
-
-assembly_info:
-  patch: true
-  file: AssemblyInfo.*
-  assembly_version: "1.0.{build}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
 
 nuget:
   account_feed: true
@@ -36,22 +25,21 @@ platform: Any CPU
 configuration: Release
 
 before_build:
+  - git submodule update --init --recursive # https://github.com/appveyor/ci/issues/1309
   - nuget restore
 
 build:
   parallel: true
   project: Mixin.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
 
   verbosity: normal
 
 test:
   assemblies:
-    - Mixin.Test.dll
+    - Mixin.Tests.dll
 
 artifacts:
-  - path: 'bin\$(configuration)\*.nupkg'
+  - path: 'src\**\bin\$(configuration)\*.nupkg'
 
 deploy:
   - provider: NuGet

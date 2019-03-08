@@ -1,4 +1,4 @@
-namespace Mixin.Network
+﻿namespace Mixin.Network
 {
     public class Assets
     {

@@ -1,8 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Mixin.Network.Models;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Mixin.Network
 {
@@ -68,7 +67,9 @@ namespace Mixin.Network
                 body.Add("account_tag", accountTag);
             }
 
-            return JsonConvert.DeserializeObject<AddressModel>(transport.SendPostRequest(uri, JsonConvert.SerializeObject(body))).Data;
+            return JsonConvert
+                .DeserializeObject<AddressModel>(transport.SendPostRequest(uri, JsonConvert.SerializeObject(body)))
+                .Data;
         }
 
         public WithDrawalData Withdrawal(string asset, string address, string amount, string label = "")
@@ -86,7 +87,9 @@ namespace Mixin.Network
                 {"trace_id", Guid.NewGuid().ToString()},
                 {"memo", "Created by Mixin SDK C#"}
             };
-            return JsonConvert.DeserializeObject<WithDrawalModel>(transport.SendPostRequest(uri, JsonConvert.SerializeObject(body))).Data;
+            return JsonConvert
+                .DeserializeObject<WithDrawalModel>(transport.SendPostRequest(uri, JsonConvert.SerializeObject(body)))
+                .Data;
         }
 
         public void DeleteAddress(string addressId)
@@ -101,12 +104,14 @@ namespace Mixin.Network
 
         public AddressData GetAddress(string addressId)
         {
-            return JsonConvert.DeserializeObject<AddressModel>(transport.SendGetRequest($"/addresses/{addressId}")).Data;
+            return JsonConvert.DeserializeObject<AddressModel>(transport.SendGetRequest($"/addresses/{addressId}"))
+                .Data;
         }
 
         public List<AddressData> GetWithdrawalAddress(string assetId)
         {
-            return JsonConvert.DeserializeObject<AddressListModel>(transport.SendGetRequest($"/assets/{assetId}/addresses")).Data;
+            return JsonConvert
+                .DeserializeObject<AddressListModel>(transport.SendGetRequest($"/assets/{assetId}/addresses")).Data;
         }
 
         public AssetData ReadAsset(string asset)
@@ -151,10 +156,12 @@ namespace Mixin.Network
 
         public TransferData GetTransfer(string traceId)
         {
-            return JsonConvert.DeserializeObject<TransferModel>(transport.SendGetRequest($"/transfers/trace/{traceId}")).Data;
+            return JsonConvert.DeserializeObject<TransferModel>(transport.SendGetRequest($"/transfers/trace/{traceId}"))
+                .Data;
         }
 
-        public List<TransactionData> ExternalTransfer(string assetId, string publicKey, string accountTag, string accountName,
+        public List<TransactionData> ExternalTransfer(string assetId, string publicKey, string accountTag,
+            string accountName,
             string limit,
             string offset)
         {
@@ -168,7 +175,9 @@ namespace Mixin.Network
                 {"offset", offset}
             };
 
-            return JsonConvert.DeserializeObject<TransactionModel>(transport.SendPostRequest("/external/transactions", JsonConvert.SerializeObject(query))).Data;
+            return JsonConvert
+                .DeserializeObject<TransactionModel>(transport.SendPostRequest("/external/transactions",
+                    JsonConvert.SerializeObject(query))).Data;
         }
 
 
@@ -179,31 +188,37 @@ namespace Mixin.Network
 
         public AssetData GetNetworkAsset(string assetId)
         {
-            return JsonConvert.DeserializeObject<AssetModel>(transport.SendGetRequest($"/network/assets/{assetId}")).Data;
+            return JsonConvert.DeserializeObject<AssetModel>(transport.SendGetRequest($"/network/assets/{assetId}"))
+                .Data;
         }
 
         public List<SnapshotData> Snapshots(string offset, string assetId, string order = "DESC", int limit = 100)
         {
-            return JsonConvert.DeserializeObject<SnapshotListModel>(transport.SendGetRequest("/network/snapshots")).Data;
+            return JsonConvert.DeserializeObject<SnapshotListModel>(transport.SendGetRequest("/network/snapshots"))
+                .Data;
         }
 
         public SnapshotData Snapshot(string snapshotId)
         {
-            return JsonConvert.DeserializeObject<SnapshotModel>(transport.SendGetRequest($"/network/snapshots/${snapshotId}")).Data;
+            return JsonConvert
+                .DeserializeObject<SnapshotModel>(transport.SendGetRequest($"/network/snapshots/${snapshotId}")).Data;
         }
 
         public List<AssetData> SearchAssets(string assetName)
         {
-            return JsonConvert.DeserializeObject<AssetListModel>(transport.SendGetRequest($"/network/assets/search/{assetName}")).Data;
+            return JsonConvert
+                .DeserializeObject<AssetListModel>(transport.SendGetRequest($"/network/assets/search/{assetName}"))
+                .Data;
         }
 
         public UserData CreateUser(string sessionSecret, string fullName)
         {
-            return JsonConvert.DeserializeObject<UserModel>(transport.SendPostRequest("/users", JsonConvert.SerializeObject(new Dictionary<string, string>
-            {
-                {"session_secret", sessionSecret},
-                {"full_name", fullName}
-            }))).Data;
+            return JsonConvert.DeserializeObject<UserModel>(transport.SendPostRequest("/users",
+                JsonConvert.SerializeObject(new Dictionary<string, string>
+                {
+                    {"session_secret", sessionSecret},
+                    {"full_name", fullName}
+                }))).Data;
         }
     }
 }

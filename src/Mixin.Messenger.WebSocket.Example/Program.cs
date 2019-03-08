@@ -1,25 +1,17 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using Mixin.Messenger.Models;
 using Newtonsoft.Json;
 
-#endregion
-
-namespace Mixin.Messenger
+namespace Mixin.Messenger.WebSocket.Example
 {
-    internal class Program
+    class Program
     {
         public static void Main(string[] args)
         {
             var clientId = "4f11c777-3d31-468b-a099-5577438112ef";
-            var clientSecret = "9316a61a51f27b6be744c39d348490b1f5cd56ab8ab9b939b3c4f806d296dbd7";
-            var pinCode = "491169";
             var sessionId = "bda2c4ad-f1d3-4c56-998e-ac4e31af2d62";
-
-            var pinToken =
-                "hMr9RJqbYWXgYGrv0h8xzDJg1kQ1JRqrm+dwIyWrvJ8TQUsbR5iwS+iIc4g1H9G1eKwndi6D4SIddnOJJaI+EoX0GglT347gRBNNIckOfQnEA6BuOCoDIBCrBSWbXrUetaj5K6wtUrhN6m9ZvOolJiXlJZOmTAvs3AiLTDogBGU=";
             var privateKey = @"-----BEGIN RSA PRIVATE KEY-----
 MIICXQIBAAKBgQCgJGu8uYH6p63W0WQxt7mxc8U3Sn9oyetp+gpd1FDkoCRR/kO2
 bwai6RVtR+76HubanG2yHoigVqd5reIyOqn5+Ws71tEoTLv//2UH0j+1QSROryPk
@@ -42,7 +34,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             var ws = new WebSocketClient(clientId, sessionId, privateKey)
             {
                 onCloseDelegate = (sender, eventArgs) => { Console.WriteLine("closed " + eventArgs.ToString()); },
-                onErrorDelegate = (sender, eventArgs) => { Console.WriteLine("Error " + eventArgs.ToString()); }
+                onReconnectionDelegate = (sender, eventArgs) => { Console.WriteLine("Error " + eventArgs.ToString()); }
             };
             ws.onMessageDelegate = (sender, eventArgs, message) =>
             {

@@ -1,9 +1,5 @@
-#region
-
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Text;
-
-#endregion
 
 namespace Mixin.Network
 {
