@@ -8,9 +8,6 @@ skip_branch_with_pr: true
 
 image: Visual Studio 2017
 
-shallow_clone: true
-clone_depth: 5
-
 install:
   - git submodule update --init --recursive
 
