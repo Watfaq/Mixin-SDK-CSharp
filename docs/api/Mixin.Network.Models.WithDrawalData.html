@@ -83,16 +83,10 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
@@ -102,6 +96,12 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Mixin.Network.Models.html">Mixin.Network.Models</a></h6>
@@ -114,10 +114,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_Amount.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_Amount.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L30">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L21">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_Amount_" data-uid="Mixin.Network.Models.WithDrawalData.Amount*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_Amount" data-uid="Mixin.Network.Models.WithDrawalData.Amount">Amount</h4>
@@ -125,7 +125,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;amount&quot;)]
+public string Amount { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,10 +145,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_AssetId.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.AssetId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_AssetId.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.AssetId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L27">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L19">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_AssetId_" data-uid="Mixin.Network.Models.WithDrawalData.AssetId*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_AssetId" data-uid="Mixin.Network.Models.WithDrawalData.AssetId">AssetId</h4>
@@ -155,7 +156,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Guid AssetId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;asset_id&quot;)]
+public Guid AssetId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,10 +176,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_CreatedAt.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.CreatedAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_CreatedAt.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.CreatedAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L39">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L27">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_CreatedAt_" data-uid="Mixin.Network.Models.WithDrawalData.CreatedAt*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_CreatedAt" data-uid="Mixin.Network.Models.WithDrawalData.CreatedAt">CreatedAt</h4>
@@ -185,7 +187,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTimeOffset CreatedAt { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;created_at&quot;)]
+public DateTimeOffset CreatedAt { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -204,10 +207,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_Memo.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.Memo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_Memo.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.Memo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L36">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L25">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_Memo_" data-uid="Mixin.Network.Models.WithDrawalData.Memo*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_Memo" data-uid="Mixin.Network.Models.WithDrawalData.Memo">Memo</h4>
@@ -215,7 +218,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Memo { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;memo&quot;)]
+public string Memo { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -234,10 +238,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_SnapshotId.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.SnapshotId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_SnapshotId.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.SnapshotId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L21">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L15">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_SnapshotId_" data-uid="Mixin.Network.Models.WithDrawalData.SnapshotId*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_SnapshotId" data-uid="Mixin.Network.Models.WithDrawalData.SnapshotId">SnapshotId</h4>
@@ -245,7 +249,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Guid SnapshotId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;snapshot_id&quot;)]
+public Guid SnapshotId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -264,10 +269,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_TraceId.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.TraceId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_TraceId.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.TraceId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L33">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L23">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_TraceId_" data-uid="Mixin.Network.Models.WithDrawalData.TraceId*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_TraceId" data-uid="Mixin.Network.Models.WithDrawalData.TraceId">TraceId</h4>
@@ -275,7 +280,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Guid TraceId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;trace_id&quot;)]
+public Guid TraceId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,10 +300,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_TransactionHash.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.TransactionHash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_TransactionHash.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.TransactionHash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L24">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L17">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_TransactionHash_" data-uid="Mixin.Network.Models.WithDrawalData.TransactionHash*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_TransactionHash" data-uid="Mixin.Network.Models.WithDrawalData.TransactionHash">TransactionHash</h4>
@@ -305,7 +311,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string TransactionHash { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;transaction_hash&quot;)]
+public string TransactionHash { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -324,10 +331,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_Type.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData_Type.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L18">View Source</a>
+    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L13">View Source</a>
   </span>
   <a id="Mixin_Network_Models_WithDrawalData_Type_" data-uid="Mixin.Network.Models.WithDrawalData.Type*"></a>
   <h4 id="Mixin_Network_Models_WithDrawalData_Type" data-uid="Mixin.Network.Models.WithDrawalData.Type">Type</h4>
@@ -335,7 +342,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Type { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;type&quot;)]
+public string Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -360,10 +368,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/master/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/new/standard/apiSpec/new?filename=Mixin_Network_Models_WithDrawalData.md&amp;value=---%0Auid%3A%20Mixin.Network.Models.WithDrawalData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/master/src/Mixin.Network/Models/WithDrawal.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/ibigbug/Mixin-SDK-CSharp/blob/standard/src/Mixin.Network/Models/WithDrawal.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

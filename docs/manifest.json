@@ -1,42 +1,18 @@
 {
   "homepages": [],
-  "source_base_path": "D:/Projects/Mixin-SDK/docfx",
+  "source_base_path": "C:/workspace/Mixin-SDK-CSharp/docfx",
   "xrefmap": "xrefmap.yml",
   "files": [
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mixin.Messenger.Data.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mixin.Messenger.Data.html",
-          "hash": "OpH+gsCDHdDpgvURtynYyg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mixin.Messenger.Message.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mixin.Messenger.Message.html",
-          "hash": "p3nx8rsDPUwUu7mrYVdvBQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/Mixin.Messenger.Models.AttachmentData.yml",
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.AttachmentData.html",
-          "hash": "pL+cG+UBwH6mBO4PH9RSlQ=="
+          "hash": "JQ9sJTi0u/HB3bR7BUiS8Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.AttachmentModel.html",
-          "hash": "iqlXEA0ja9F8VEsYg0+MGA=="
+          "hash": "IkkM4rEkZrTjs5k4BvXo1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.ConversationData.html",
-          "hash": "SxcV7SimN7AFf5IE2etKSQ=="
+          "hash": "VfMlkElqU0Fe3e1QddfXkQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +45,34 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.ConversationModel.html",
-          "hash": "EyieZuk5mJrjR35f/icZHg=="
+          "hash": "cF2dM8+iQgpAocZsMZV0ww=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.Data.html",
+          "hash": "NP9F78Fg0N9HX8MQGQA9dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.Models.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.Models.Message.html",
+          "hash": "6RBxfLJ6Ed+0+1cxss15QA=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.Participant.html",
-          "hash": "0FTCgsOryGTjqvkJhmsrRw=="
+          "hash": "0rasluWlG9yF2T1cYz82Pw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.ProfileListModel.html",
-          "hash": "JLADrU+gP3WsEcWou2FZEg=="
+          "hash": "lkKbrYvHuy6+EdmPigeLYw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.UserProfileData.html",
-          "hash": "Sq2n5WI5nN3VpHZev0Ti3w=="
+          "hash": "zdU6apFq0n+KZbD0WL/1vA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.UserProfileModel.html",
-          "hash": "oP/Poo9gnOCMyB2/tLm7Pw=="
+          "hash": "pdKT/f/qWwC533HqoZunFA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,10 +129,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.Models.html",
-          "hash": "hGpkDOfXthLNHxX5BrkBgA=="
+          "hash": "AU1oFyRuVJLkz9eAaq+rlg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.UserClient.html",
-          "hash": "w6SAfnWyWuzfikTaWk+pfA=="
+          "hash": "9xvwfITFd2s4Ho2WoVWNTg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,19 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.WebSocketClient.OnCloseDelegate.html",
-          "hash": "hSsu4Y+HfhJEAtmu93Jq0w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.OnErrorDelegate.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mixin.Messenger.WebSocketClient.OnErrorDelegate.html",
-          "hash": "nQkFZRm1TM9FL6M8i8wyyQ=="
+          "hash": "i9tZMe2jIEZ9Fa/uFp6E5w=="
         }
       },
       "is_incremental": true,
@@ -177,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.WebSocketClient.OnMessageDelegate.html",
-          "hash": "IhQk4eVtjjuM2W8i0uRXDQ=="
+          "hash": "7ijajv+W1vdjXgF4EncXmg=="
         }
       },
       "is_incremental": true,
@@ -189,7 +177,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.WebSocketClient.OnOpenDelegate.html",
-          "hash": "KMpw1/MFi6O7g9Zh+ELTpw=="
+          "hash": "twhA+ym1RBkpKcix494EKg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mixin.Messenger.WebSocketClient.OnReconnectionDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mixin.Messenger.WebSocketClient.OnReconnectionDelegate.html",
+          "hash": "B7OsozUJODIyZgj1qOVgKQ=="
         }
       },
       "is_incremental": true,
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.WebSocketClient.html",
-          "hash": "Wet7ADbhJNbiZpObnZri4w=="
+          "hash": "xNuyGs+BIbwB5LnxL2zxUg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Messenger.html",
-          "hash": "NyKx7RBleyR4Dra0JuCIGQ=="
+          "hash": "viTxBlOrTyt2yykXCJYbTA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Assets.html",
-          "hash": "/9XaULqu4llixYa32xkPIQ=="
+          "hash": "IqrSD8hy8O111QDrxc8ddg=="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.MixinClient.html",
-          "hash": "jWLq7r1VtYZbETogSakyVA=="
+          "hash": "ltw6uhQTTGdql3szc/KTng=="
         }
       },
       "is_incremental": true,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.MixinClientTransport.html",
-          "hash": "9Ej035kvHbM/yVooA/IdGQ=="
+          "hash": "2jJFUgX0e5oca4iwcD5Vqw=="
         }
       },
       "is_incremental": true,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.AddressData.html",
-          "hash": "D+0MvmO2sX1yhp74fvXqQw=="
+          "hash": "F9hjh0E+YwR8tGzKOh+Abw=="
         }
       },
       "is_incremental": true,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.AddressListModel.html",
-          "hash": "A4beF7p3ETXSmd1KYJutyw=="
+          "hash": "QvtXPtfTLER8Bn7p/a8lEg=="
         }
       },
       "is_incremental": true,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.AddressModel.html",
-          "hash": "Z2CGBmH2QN6/YctDHqdOxA=="
+          "hash": "84kJ3JRHTnWyNiEyJqpyHw=="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.AssetData.html",
-          "hash": "dS5scb9DJ28lZZwaaz95ag=="
+          "hash": "SFgc8GlHIF6SuNfEjau9cA=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.AssetListModel.html",
-          "hash": "RjB9L75MrB6xEv0K++jD1Q=="
+          "hash": "Ih2+hM6qjgl0JECHf56X7g=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.AssetModel.html",
-          "hash": "nQkWtVohuknwzNUiEEVxNg=="
+          "hash": "dq38+YCR/f9cW1jnS8LcYw=="
         }
       },
       "is_incremental": true,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.RecipientData.html",
-          "hash": "NYE8yUloQvqbnAFkBxgbCg=="
+          "hash": "OGjSHfcB7BJZ3VX6Ld6xsA=="
         }
       },
       "is_incremental": true,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.SnapshotData.html",
-          "hash": "i98VqRvv3+ci/twtdDPi2g=="
+          "hash": "itROMrslAMStIn4JHHbNXA=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.SnapshotListModel.html",
-          "hash": "C76Xubr+YMzOg8N2ZuwwOg=="
+          "hash": "Aa+YHgUaZgkJwo3ui0v5eg=="
         }
       },
       "is_incremental": true,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.SnapshotModel.html",
-          "hash": "d0vpMDveunb6fiF3IhaClg=="
+          "hash": "BykkFzX8vI0VIoOD4IECKA=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.TransactionData.html",
-          "hash": "CV2h87Mu1z/IEkGfUuYPmA=="
+          "hash": "6+hCA3s+ZG9cugBuZeP1fQ=="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.TransactionModel.html",
-          "hash": "OeaBpseRKeBuITjcx4lO9A=="
+          "hash": "961R3foEgUgLhdwLIRtv0w=="
         }
       },
       "is_incremental": true,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.TransferData.html",
-          "hash": "istAOYR37CQvNhtCC5OjaQ=="
+          "hash": "XUGcvJ6dw9JV9brnbQgYuw=="
         }
       },
       "is_incremental": true,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.TransferModel.html",
-          "hash": "PeSuagmcgOqxO6r/yk0l+g=="
+          "hash": "tNfzDQSITVcr5t4d9mIuig=="
         }
       },
       "is_incremental": true,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.UserData.html",
-          "hash": "LE8vlAhyywQtTtR6LwqsTg=="
+          "hash": "mgYaUdu+bpEoWBVpcN8zmg=="
         }
       },
       "is_incremental": true,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.UserModel.html",
-          "hash": "ZFzmpqPuZo1A/YbUiRIQfA=="
+          "hash": "+4PWatRUY/7/mS4hCReeWQ=="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.VerifyPamentData.html",
-          "hash": "/RbMzoyi+JMqpOelqhw1iQ=="
+          "hash": "N38Voj26O/YLONsV/x2VNQ=="
         }
       },
       "is_incremental": true,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.VerifyPamentModel.html",
-          "hash": "5n+GqAg+3JHepNSAkTPzFQ=="
+          "hash": "EnsAqwtconqb1qQvzhSljQ=="
         }
       },
       "is_incremental": true,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.WithDrawalData.html",
-          "hash": "MbzpAYvdaxS8nqks0biX0Q=="
+          "hash": "Mqxx9nk9cWGsmR7A3rKnPA=="
         }
       },
       "is_incremental": true,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Mixin.Network.Models.WithDrawalModel.html",
-          "hash": "azJnKzakr/m85w07LTkXvQ=="
+          "hash": "j1ULvGeLulAA9FKYLpfUog=="
         }
       },
       "is_incremental": true,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "3LR+ZKT2Npe0GLsJjBt2iQ=="
+          "hash": "GPIRbuPV/NYCt+H+vjfaTA=="
         }
       },
       "is_incremental": false,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "I0Zjfl603zgU+jp7vFYLKw=="
+          "hash": "3UwoIjAKvt0h21wAlszLnQ=="
         }
       },
       "is_incremental": false,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "nEhuaUmD36h8uUCPsAFreA=="
+          "hash": "ejz6vG4HlNvVnz4sZuf3AA=="
         }
       },
       "is_incremental": false,
@@ -572,17 +572,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 43,
-          "skipped_file_count": 43
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 0
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 43,
+          "skipped_file_count": 31
         }
       }
     },
