@@ -1,6 +1,4 @@
-#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,8 +12,6 @@ using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
-
-#endregion
 
 namespace Mixin.Network
 {
@@ -52,8 +48,8 @@ namespace Mixin.Network
 
 
             var pr = new PemReader(new StringReader(privateKey));
-            var keys = (AsymmetricCipherKeyPair) pr.ReadObject();
-            var rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters) keys.Private);
+            var keys = (AsymmetricCipherKeyPair)pr.ReadObject();
+            var rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)keys.Private);
             using (var rsa = new RSACryptoServiceProvider())
             {
                 rsa.ImportParameters(rsaParams);
@@ -65,7 +61,7 @@ namespace Mixin.Network
         {
             var pinTokenBytes = Convert.FromBase64String(pinToken);
             var pr = new PemReader(new StringReader(privateKey));
-            var keys = (AsymmetricCipherKeyPair) pr.ReadObject();
+            var keys = (AsymmetricCipherKeyPair)pr.ReadObject();
 
             var eng = new OaepEncoding(new RsaEngine(), new Sha256Digest(), new Sha256Digest(),
                 Encoding.UTF8.GetBytes(sessionId));

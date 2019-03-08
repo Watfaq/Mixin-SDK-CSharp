@@ -19,13 +19,6 @@ cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
   - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
 
-assembly_info:
-  patch: true
-  file: AssemblyInfo.*
-  assembly_version: "1.0.{build}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
-
 nuget:
   account_feed: true
   project_feed: true

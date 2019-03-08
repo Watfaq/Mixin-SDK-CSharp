@@ -1,83 +1,74 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Security.Authentication;
-using System.Security.Cryptography;
+using System.Net.WebSockets;
 using System.Text;
-using Jose;
+using System.Threading.Tasks;
 using Mixin.Network;
 using Newtonsoft.Json;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.OpenSsl;
-using Org.BouncyCastle.Security;
-using WebSocketSharp;
-using ErrorEventArgs = WebSocketSharp.ErrorEventArgs;
-
-#endregion
+using Websocket.Client;
 
 namespace Mixin.Messenger
 {
     public class WebSocketClient
     {
-        public delegate void OnCloseDelegate(object sender, EventArgs args);
+        public delegate void OnCloseDelegate(object sender, DisconnectionType t);
 
-        public delegate void OnErrorDelegate(object sender, EventArgs args);
-
-        public delegate void OnMessageDelegate(object sender, EventArgs args, string message);
+        public delegate void OnMessageDelegate(object sender, MessageType args, string message);
 
         public delegate void OnOpenDelegate(object sender, EventArgs args);
 
-        private readonly WebSocket ws;
+        public delegate void OnReconnectionDelegate(object sender, ReconnectionType t);
+
+        private readonly WebsocketClient ws;
+
+        private readonly string clientId;
         public OnCloseDelegate onCloseDelegate;
-        public OnErrorDelegate onErrorDelegate;
         public OnMessageDelegate onMessageDelegate;
         public OnOpenDelegate onOpenDelegate;
-
-        private string clientId;
+        public OnReconnectionDelegate onReconnectionDelegate;
 
         public WebSocketClient(string clientId, string sessionId, string privateKey,
             OnMessageDelegate onMessageDelegate = null, OnOpenDelegate onOpenDelegate
-                = null, OnCloseDelegate onCloseDelegate = null, OnErrorDelegate onErrorDelegate = null)
+                = null, OnCloseDelegate onCloseDelegate = null, OnReconnectionDelegate onReconnectionDelegate = null)
         {
-
             this.onMessageDelegate = onMessageDelegate;
             this.onOpenDelegate = onOpenDelegate;
             this.onCloseDelegate = onCloseDelegate;
-            this.onErrorDelegate = onErrorDelegate;
+            this.onReconnectionDelegate = onReconnectionDelegate;
             this.clientId = clientId;
 
             var transport = new MixinClientTransport(clientId, sessionId, "", privateKey);
 
-            ws = new WebSocket("wss://blaze.mixin.one/", "Mixin-Blaze-1")
+            ws = new WebsocketClient(new Uri("wss://blaze.mixin.one/"), () =>
             {
-                CustomHeaders =
-                    new Dictionary<string, string> {{"Authorization", $"Bearer {transport.SignAuthToken("GET", "/")}"}},
-                SslConfiguration = {EnabledSslProtocols = SslProtocols.Tls12}
-            };
+                var client = new ClientWebSocket();
+                client.Options.AddSubProtocol("Mixin-Blaze-1");
+                client.Options.SetRequestHeader("Authorization", "Bearer " + transport.SignAuthToken("GET", "/"));
+                return client;
+            });
 
-            ws.OnOpen += OnOpen;
-            ws.OnMessage += OnMessage;
-            ws.OnClose += OnClose;
-            ws.OnError += OnError;
+            ws.ReconnectTimeoutMs = (int) TimeSpan.FromHours(1).TotalMilliseconds;
+            ws.ReconnectionHappened.Subscribe(type => OnReconnection(ws, type));
+            ws.DisconnectionHappened.Subscribe(type => OnClose(ws, type));
+            ws.MessageReceived.Subscribe(msg => OnMessage(ws, msg));
         }
 
-        private void OnError(object sender, ErrorEventArgs e)
+        private void OnReconnection(object sender, ReconnectionType e)
         {
-            onErrorDelegate?.Invoke(sender, e);
+            onReconnectionDelegate?.Invoke(sender, e);
         }
 
-        private void OnClose(object sender, CloseEventArgs e)
+        private void OnClose(object sender, DisconnectionType e)
         {
             onCloseDelegate?.Invoke(sender, e);
         }
 
-        public void Run()
+        public async Task Run()
         {
-            ws.Connect();
+            await ws.Start();
+            OnOpen(ws, null);
         }
 
         public void WriteMessage(string action, Dictionary<string, object> body = null)
@@ -87,10 +78,7 @@ namespace Mixin.Messenger
                 {"id", Guid.NewGuid().ToString()},
                 {"action", action}
             };
-            if (body != null)
-            {
-                message.Add("params", body);
-            }
+            if (body != null) message.Add("params", body);
 
             using (var outputStream = new MemoryStream())
             {
@@ -100,7 +88,7 @@ namespace Mixin.Messenger
                     gzipStream.Write(bytes, 0, bytes.Length);
                 }
 
-                ws.Send(outputStream.ToArray());
+                ws.SendInstant(outputStream.ToArray());
             }
         }
 
@@ -183,10 +171,9 @@ namespace Mixin.Messenger
         }
 
 
-        private void OnMessage(object sender, EventArgs args)
+        private void OnMessage(object sender, MessageType msg)
         {
-            var msgEvtArgs = (MessageEventArgs) args;
-            using (var msi = new MemoryStream(msgEvtArgs.RawData))
+            using (var msi = new MemoryStream(msg.RawData))
             using (var mso = new MemoryStream())
             {
                 using (var gs = new GZipStream(msi, CompressionMode.Decompress))
@@ -194,22 +181,19 @@ namespace Mixin.Messenger
                     CopyTo(gs, mso);
                 }
 
-                onMessageDelegate?.Invoke(sender, args, Encoding.UTF8.GetString(mso.ToArray()));
+                onMessageDelegate?.Invoke(sender, msg, Encoding.UTF8.GetString(mso.ToArray()));
             }
         }
 
         private static void CopyTo(Stream src, Stream dest)
         {
-            byte[] bytes = new byte[4096];
+            var bytes = new byte[4096];
 
             int cnt;
 
-            while ((cnt = src.Read(bytes, 0, bytes.Length)) != 0)
-            {
-                dest.Write(bytes, 0, cnt);
-            }
+            while ((cnt = src.Read(bytes, 0, bytes.Length)) != 0) dest.Write(bytes, 0, cnt);
         }
-     
+
         public string Base64Decode(string s)
         {
             return Encoding.UTF8.GetString(Convert.FromBase64String(s));

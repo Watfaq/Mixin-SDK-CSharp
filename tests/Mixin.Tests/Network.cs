@@ -1,15 +1,16 @@
-﻿using System;
+using System;
 using System.Linq;
-using Mixin.Network;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace Mixin.Test
+using Mixin.Network;
+
+namespace Mixin.Tests
 {
     [TestClass]
-    public class NetworkTests
+    public class Network
     {
         private readonly MixinClient mixinClient;
 
-        public NetworkTests()
+        public Network()
         {
             var clientId = "4f11c777-3d31-468b-a099-5577438112ef";
             var pinCode = "491169";
@@ -36,7 +37,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             mixinClient = new MixinClient(clientId, sessionId, pinToken, pinCode, privateKey);
         }
 
-//        [TestMethod]
+        //        [TestMethod]
         public void TestCreatePin()
         {
             var testPin = "123456";
@@ -63,7 +64,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             Assert.IsNotNull(assets.First().Name);
         }
 
-//        [TestMethod]
+        //        [TestMethod]
         public void TestTransfer()
         {
             var toClientId = "ea02ebc3-9be3-4a35-985b-6587fd28f493";
@@ -76,7 +77,7 @@ asYiUmQhe+AsRGo9m7XrcUMSPE7KRixyTO6rHjnk/UffvgJ+gANV9hqu0G0BXd+Z
             Assert.AreEqual("Test Transfer", transfer.Memo);
         }
 
- //       [TestMethod]
+        //       [TestMethod]
         public void TestVerifyPin()
         {
             var result = mixinClient.VerifyPin("491169");

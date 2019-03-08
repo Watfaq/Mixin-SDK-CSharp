@@ -1,15 +1,7 @@
-#region
-
-using System.Collections.Generic;
-using Newtonsoft.Json;
-
-#endregion
-
-namespace Mixin.Network
+﻿namespace Mixin.Network
 {
     public partial class MixinClient
     {
-
         private readonly string pinCode;
         private MixinClientTransport transport;
 

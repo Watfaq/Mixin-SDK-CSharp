@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Mixin.Messenger.Models;
 using Mixin.Network;
 using Newtonsoft.Json;

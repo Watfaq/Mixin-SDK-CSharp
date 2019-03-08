@@ -1,19 +1,13 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Linq;
-using Mixin.Network;
 
-#endregion
-
-namespace Examples
+namespace Mixin.Network.Example
 {
-    internal class Program
+    class Program
     {
         public static void Main(string[] args)
         {
             var clientId = "4f11c777-3d31-468b-a099-5577438112ef";
-            var clientSecret = "9316a61a51f27b6be744c39d348490b1f5cd56ab8ab9b939b3c4f806d296dbd7";
             var pinCode = "491169";
             var sessionId = "bda2c4ad-f1d3-4c56-998e-ac4e31af2d62";
 
