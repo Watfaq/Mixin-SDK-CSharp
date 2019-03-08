@@ -31,8 +31,6 @@ before_build:
 build:
   parallel: true
   project: Mixin.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
 
   verbosity: normal
 
@@ -41,7 +39,7 @@ test:
     - Mixin.Tests.dll
 
 artifacts:
-  - path: 'bin\$(configuration)\*.nupkg'
+  - path: 'bin\**\$(configuration)\*.nupkg'
 
 deploy:
   - provider: NuGet
