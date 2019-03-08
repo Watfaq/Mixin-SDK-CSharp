@@ -8,15 +8,11 @@ skip_branch_with_pr: true
 
 image: Visual Studio 2017
 
-install:
-  - git submodule update --init --recursive
-
 matrix:
   fast_finish: true
 
 # build cache to preserve files/folders between builds
 cache:
-  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
   - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
 
 nuget:
@@ -29,6 +25,7 @@ platform: Any CPU
 configuration: Release
 
 before_build:
+  - git submodule update --init --recursive # https://github.com/appveyor/ci/issues/1309
   - nuget restore
 
 build:
